@@ -1,0 +1,167 @@
+{
+	"name": "wikimedia/param-validator",
+	"description": "This library implements a system for processing and validating parameters to an API, based on a declarative definition of available parameters.",
+	"type": "library",
+	"keywords": [
+		"wikimedia",
+		"param-validator"
+	],
+	"authors": [
+		{
+			"name": "Alexander Vorwerk",
+			"email": "alexander.vorwerk@stud.uni-goettingen.de"
+		},
+		{
+			"name": "Ammarpad",
+			"email": "ammarpad@yahoo.com"
+		},
+		{
+			"name": "Bartosz Dziewoński",
+			"email": "dziewonski@fastmail.fm"
+		},
+		{
+			"name": "Brad Jorsch",
+			"email": "bjorsch@wikimedia.org"
+		},
+		{
+			"name": "C. Scott Ananian",
+			"email": "cscott@cscott.net"
+		},
+		{
+			"name": "Daimona Eaytoy",
+			"email": "daimona.wiki@gmail.com"
+		},
+		{
+			"name": "DannyS712",
+			"email": "DannyS712.enwiki@gmail.com"
+		},
+		{
+			"name": "Derick Alangi",
+			"email": "alangiderick@gmail.com"
+		},
+		{
+			"name": "Doğu Abaris",
+			"email": "abaris@null.net"
+		},
+		{
+			"name": "Ed Sanders",
+			"email": "esanders@wikimedia.org"
+		},
+		{
+			"name": "James D. Forrester",
+			"email": "jforrester@wikimedia.org"
+		},
+		{
+			"name": "Matěj Suchánek",
+			"email": "matejsuchanek97@gmail.com"
+		},
+		{
+			"name": "Max Semenik",
+			"email": "maxsem.wiki@gmail.com"
+		},
+		{
+			"name": "MusikAnimal",
+			"email": "musikanimal@gmail.com"
+		},
+		{
+			"name": "Niklas Laxström",
+			"email": "niklas.laxstrom@gmail.com"
+		},
+		{
+			"name": "Reedy",
+			"email": "reedy@wikimedia.org"
+		},
+		{
+			"name": "Ricordisamoa",
+			"email": "ricordisamoa@openmailbox.org"
+		},
+		{
+			"name": "Siddharth VP",
+			"email": "siddharthvp@gmail.com"
+		},
+		{
+			"name": "Thiemo Kreuz",
+			"email": "thiemo.kreuz@wikimedia.de"
+		},
+		{
+			"name": "Tim Starling",
+			"email": "tstarling@wikimedia.org"
+		},
+		{
+			"name": "Timo Tijhof",
+			"email": "krinkle@fastmail.com"
+		},
+		{
+			"name": "Translation updater bot",
+			"email": "l10n-bot@translatewiki.net"
+		},
+		{
+			"name": "Umherirrender",
+			"email": "umherirrender_de.wp@web.de"
+		},
+		{
+			"name": "daniel",
+			"email": "dkinzler@wikimedia.org"
+		},
+		{
+			"name": "hmonroy",
+			"email": "hmonroy@wikimedia.org"
+		}
+	],
+	"license": "GPL-2.0-or-later",
+	"require": {
+		"php": ">=8.1.0",
+		"ext-json": "*",
+		"wikimedia/json-codec": "^3.0",
+		"wikimedia/testing-access-wrapper": "^3.0",
+		"wikimedia/timestamp": "^4.2",
+		"wikimedia/at-ease": "^3.0",
+		"psr/http-message": "1.1",
+		"wikimedia/assert": "^0.5.1",
+		"wikimedia/object-factory": "^5.0",
+		"wikimedia/message": "^1.0.4"
+	},
+	"require-dev": {
+		"mediawiki/mediawiki-codesniffer": "^47.0",
+		"mediawiki/mediawiki-phan-config": "0.16.0",
+		"mediawiki/minus-x": "1.1.3",
+		"ockcyp/covers-validator": "1.6.0",
+		"php-parallel-lint/php-console-highlighter": "1.0.0",
+		"php-parallel-lint/php-parallel-lint": "1.4.0",
+		"phpunit/phpunit": "9.6.21",
+		"wikimedia/update-history": "^1.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"Wikimedia\\ParamValidator\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Wikimedia\\ParamValidator\\Tests\\": "tests/"
+		}
+	},
+	"scripts": {
+		"test": [
+			"parallel-lint . --exclude vendor",
+			"php -d 'extension=pcov.so' vendor/bin/phpunit",
+			"covers-validator",
+			"phan --allow-polyfill-parser --long-progress-bar",
+			"@phpcs",
+			"minus-x check ."
+		],
+		"fix": [
+			"minus-x fix .",
+			"phpcbf"
+		],
+		"phan": "phan -d . --long-progress-bar",
+		"phpcs": "phpcs -sp --cache"
+	},
+	"config": {
+		"prepend-autoloader": false,
+		"optimize-autoloader": true,
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	}
+}

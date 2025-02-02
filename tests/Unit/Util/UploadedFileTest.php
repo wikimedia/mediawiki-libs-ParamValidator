@@ -1,6 +1,6 @@
 <?php
 
-namespace Wikimedia\Tests\ParamValidator\Util;
+namespace Wikimedia\ParamValidator\Tests\Unit\Util;
 
 require_once __DIR__ . '/UploadedFileTestBase.php';
 
@@ -69,7 +69,8 @@ class UploadedFileTest extends UploadedFileTestBase {
 			} catch ( RuntimeException $ex ) {
 			}
 		} finally {
-			unlink( $filename . '.xxx' ); // Clean up
+			// Clean up
+			unlink( $filename . '.xxx' );
 		}
 
 		// getStream() fails if the file is missing

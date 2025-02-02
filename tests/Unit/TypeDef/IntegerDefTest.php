@@ -1,6 +1,6 @@
 <?php
 
-namespace Wikimedia\Tests\ParamValidator\TypeDef;
+namespace Wikimedia\ParamValidator\Tests\Unit\TypeDef;
 
 use Wikimedia\Message\DataMessageValue;
 use Wikimedia\ParamValidator\ParamValidator;
@@ -291,6 +291,7 @@ class IntegerDefTest extends TypeDefTestCase {
 				[],
 				[ 'min' => null, 'max' => null ],
 				[
+					// phpcs:ignore Generic.Files.LineLength.TooLong
 					ParamValidator::PARAM_TYPE => '<message key="paramvalidator-help-type-integer"><text>1</text></message>',
 				],
 			],
@@ -298,7 +299,9 @@ class IntegerDefTest extends TypeDefTestCase {
 				[ IntegerDef::PARAM_MIN => 0, ParamValidator::PARAM_ISMULTI => true ],
 				[ 'min' => 0, 'max' => null ],
 				[
+					// phpcs:ignore Generic.Files.LineLength.TooLong
 					IntegerDef::PARAM_MIN => '<message key="paramvalidator-help-type-number-min"><text>2</text><num>0</num><text>∞</text></message>',
+					// phpcs:ignore Generic.Files.LineLength.TooLong
 					ParamValidator::PARAM_TYPE => '<message key="paramvalidator-help-type-integer"><text>2</text></message>',
 				],
 			],
@@ -306,7 +309,9 @@ class IntegerDefTest extends TypeDefTestCase {
 				[ IntegerDef::PARAM_MAX => 2 ],
 				[ 'min' => null, 'max' => 2 ],
 				[
+					// phpcs:ignore Generic.Files.LineLength.TooLong
 					IntegerDef::PARAM_MIN => '<message key="paramvalidator-help-type-number-max"><text>1</text><text>−∞</text><num>2</num></message>',
+					// phpcs:ignore Generic.Files.LineLength.TooLong
 					ParamValidator::PARAM_TYPE => '<message key="paramvalidator-help-type-integer"><text>1</text></message>',
 				],
 			],
@@ -314,7 +319,9 @@ class IntegerDefTest extends TypeDefTestCase {
 				[ IntegerDef::PARAM_MAX => 2, IntegerDef::PARAM_MAX2 => 4 ],
 				[ 'min' => null, 'max' => 2, 'highmax' => 4 ],
 				[
+					// phpcs:ignore Generic.Files.LineLength.TooLong
 					IntegerDef::PARAM_MIN => '<message key="paramvalidator-help-type-number-max"><text>1</text><text>−∞</text><num>2</num></message>',
+					// phpcs:ignore Generic.Files.LineLength.TooLong
 					ParamValidator::PARAM_TYPE => '<message key="paramvalidator-help-type-integer"><text>1</text></message>',
 				],
 			],
@@ -322,7 +329,9 @@ class IntegerDefTest extends TypeDefTestCase {
 				[ IntegerDef::PARAM_MAX => 2, IntegerDef::PARAM_MAX2 => 4 ],
 				[ 'min' => null, 'max' => 2, 'highmax' => 4 ],
 				[
+					// phpcs:ignore Generic.Files.LineLength.TooLong
 					IntegerDef::PARAM_MIN => '<message key="paramvalidator-help-type-number-max"><text>1</text><text>−∞</text><num>4</num></message>',
+					// phpcs:ignore Generic.Files.LineLength.TooLong
 					ParamValidator::PARAM_TYPE => '<message key="paramvalidator-help-type-integer"><text>1</text></message>',
 				],
 				[ 'useHighLimits' => true ],
@@ -331,7 +340,9 @@ class IntegerDefTest extends TypeDefTestCase {
 				[ IntegerDef::PARAM_MIN => 0, IntegerDef::PARAM_MAX => 2 ],
 				[ 'min' => 0, 'max' => 2 ],
 				[
+					// phpcs:ignore Generic.Files.LineLength.TooLong
 					IntegerDef::PARAM_MIN => '<message key="paramvalidator-help-type-number-minmax"><text>1</text><num>0</num><num>2</num></message>',
+					// phpcs:ignore Generic.Files.LineLength.TooLong
 					ParamValidator::PARAM_TYPE => '<message key="paramvalidator-help-type-integer"><text>1</text></message>',
 				],
 			],
@@ -339,7 +350,9 @@ class IntegerDefTest extends TypeDefTestCase {
 				[ IntegerDef::PARAM_MIN => 0, IntegerDef::PARAM_MAX => 2, IntegerDef::PARAM_MAX2 => 4 ],
 				[ 'min' => 0, 'max' => 2, 'highmax' => 4 ],
 				[
+					// phpcs:ignore Generic.Files.LineLength.TooLong
 					IntegerDef::PARAM_MIN => '<message key="paramvalidator-help-type-number-minmax"><text>1</text><num>0</num><num>2</num></message>',
+					// phpcs:ignore Generic.Files.LineLength.TooLong
 					ParamValidator::PARAM_TYPE => '<message key="paramvalidator-help-type-integer"><text>1</text></message>',
 				],
 			],
@@ -350,7 +363,9 @@ class IntegerDefTest extends TypeDefTestCase {
 				],
 				[ 'min' => 0, 'max' => 2, 'highmax' => 4 ],
 				[
+					// phpcs:ignore Generic.Files.LineLength.TooLong
 					IntegerDef::PARAM_MIN => '<message key="paramvalidator-help-type-number-minmax"><text>2</text><num>0</num><num>4</num></message>',
+					// phpcs:ignore Generic.Files.LineLength.TooLong
 					ParamValidator::PARAM_TYPE => '<message key="paramvalidator-help-type-integer"><text>2</text></message>',
 				],
 				[ 'useHighLimits' => true ],

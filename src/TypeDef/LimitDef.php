@@ -12,7 +12,7 @@ use Wikimedia\ParamValidator\ParamValidator;
  * IntegerDef::PARAM_MIN defaults to 0 for this type.
  *
  * @see IntegerDef
- * @since 1.34
+ * @since MediaWiki 1.34
  * @unstable
  */
 class LimitDef extends IntegerDef {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Wikimedia\Tests\ParamValidator\TypeDef;
+namespace Wikimedia\ParamValidator\Tests\Unit\TypeDef;
 
 use InvalidArgumentException;
 use Wikimedia\Message\DataMessageValue;
@@ -22,7 +22,8 @@ class TimestampDefTest extends TypeDefTestCase {
 	/** @dataProvider provideConstructorOptions */
 	public function testConstructorOptions( array $options, $ok ): void {
 		if ( $ok ) {
-			$this->assertTrue( true ); // dummy
+			// dummy
+			$this->assertTrue( true );
 		} else {
 			$this->expectException( InvalidArgumentException::class );
 		}
@@ -195,6 +196,7 @@ class TimestampDefTest extends TypeDefTestCase {
 				[],
 				[],
 				[
+					// phpcs:ignore Generic.Files.LineLength.TooLong
 					ParamValidator::PARAM_TYPE => '<message key="paramvalidator-help-type-timestamp"><text>1</text></message>',
 				],
 			],
@@ -202,6 +204,7 @@ class TimestampDefTest extends TypeDefTestCase {
 				[ ParamValidator::PARAM_ISMULTI => true ],
 				[],
 				[
+					// phpcs:ignore Generic.Files.LineLength.TooLong
 					ParamValidator::PARAM_TYPE => '<message key="paramvalidator-help-type-timestamp"><text>2</text></message>',
 				],
 			],

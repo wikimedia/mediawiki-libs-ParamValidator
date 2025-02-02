@@ -1,6 +1,6 @@
 <?php
 
-namespace Wikimedia\Tests\ParamValidator\TypeDef;
+namespace Wikimedia\ParamValidator\Tests\Unit\TypeDef;
 
 use Wikimedia\Message\DataMessageValue;
 use Wikimedia\ParamValidator\ParamValidator;
@@ -80,14 +80,16 @@ class BooleanDefTest extends TypeDefTestCase {
 				[],
 				[],
 				[
-					ParamValidator::PARAM_TYPE => '<message key="paramvalidator-help-type-boolean"><text>1</text></message>',
+					ParamValidator::PARAM_TYPE =>
+						'<message key="paramvalidator-help-type-boolean"><text>1</text></message>',
 				],
 			],
 			'Multi-valued' => [
 				[ ParamValidator::PARAM_ISMULTI => true ],
 				[],
 				[
-					ParamValidator::PARAM_TYPE => '<message key="paramvalidator-help-type-boolean"><text>2</text></message>',
+					ParamValidator::PARAM_TYPE =>
+						'<message key="paramvalidator-help-type-boolean"><text>2</text></message>',
 				],
 			],
 		];

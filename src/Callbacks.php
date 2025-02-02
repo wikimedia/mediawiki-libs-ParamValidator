@@ -15,7 +15,7 @@ use Wikimedia\Message\DataMessageValue;
  * passed to ParamValidator::getValue(), ParamValidator::validateValue(), and the like
  * and is intended for communication of non-global state.
  *
- * @since 1.34
+ * @since MediaWiki 1.34
  * @unstable
  */
 interface Callbacks {

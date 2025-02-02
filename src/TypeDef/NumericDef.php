@@ -20,7 +20,7 @@ use Wikimedia\ParamValidator\ValidationException;
  *     - 'highmax': High limits maximum allowed, or null if there is no limit.
  *
  * @stable to extend
- * @since 1.35
+ * @since MediaWiki 1.35
  * @unstable
  */
 abstract class NumericDef extends TypeDef {

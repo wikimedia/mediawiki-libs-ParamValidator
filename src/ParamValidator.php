@@ -36,7 +36,7 @@ use Wikimedia\ObjectFactory\ObjectFactory;
  *    - Fetching the "high limits" flag when necessary, to avoid the need for loading
  *      the user unnecessarily.
  *
- * @since 1.34
+ * @since MediaWiki 1.34
  * @unstable
  */
 class ParamValidator {
@@ -592,7 +592,7 @@ class ParamValidator {
 
 		// Non-multi
 		if ( empty( $settings[self::PARAM_ISMULTI] ) ) {
-			if ( is_string( $value ) && substr( $value, 0, 1 ) === "\x1f" ) {
+			if ( is_string( $value ) && str_starts_with( $value, "\x1f" ) ) {
 				throw new ValidationException(
 					DataMessageValue::new( 'paramvalidator-notmulti', [], 'badvalue' )
 						->plaintextParams( $name, $value ),
@@ -863,7 +863,7 @@ class ParamValidator {
 			return [];
 		}
 
-		if ( substr( $value, 0, 1 ) === "\x1f" ) {
+		if ( str_starts_with( $value, "\x1f" ) ) {
 			$sep = "\x1f";
 			$value = substr( $value, 1 );
 		} else {

@@ -28,7 +28,7 @@ use Wikimedia\ParamValidator\Util\UploadedFile;
  *       - 'notupload': The field was present in the submission but was not encoded as an upload.
  *     - 'size': The configured size (in bytes), if 'code' is 'inisize'.
  *
- * @since 1.34
+ * @since MediaWiki 1.34
  * @unstable
  */
 class UploadDef extends TypeDef {
@@ -49,7 +49,8 @@ class UploadDef extends TypeDef {
 				'name' => '',
 				'type' => '',
 				'tmp_name' => '',
-				'error' => -42, // PHP's UPLOAD_ERR_* are all positive numbers.
+				// PHP's UPLOAD_ERR_* are all positive numbers.
+				'error' => -42,
 				'size' => 0,
 			] );
 		}
@@ -72,7 +73,8 @@ class UploadDef extends TypeDef {
 
 	public function validate( $name, $value, array $settings, array $options ) {
 		static $codemap = [
-			-42 => 'notupload', // Local from getValue()
+			// Local from getValue()
+			-42 => 'notupload',
 			UPLOAD_ERR_FORM_SIZE => 'formsize',
 			UPLOAD_ERR_PARTIAL => 'partial',
 			UPLOAD_ERR_NO_FILE => 'nofile',

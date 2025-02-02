@@ -12,7 +12,7 @@ use Wikimedia\Message\MessageValue;
  * passed to ParamValidator::getValue(), ParamValidator::validateValue(), and the like
  * and is intended for communication of non-global state to the Callbacks.
  *
- * @since 1.34
+ * @since MediaWiki 1.34
  * @unstable for use in extensions. Intended to become stable to extend, at
  *           least for use in MediaWiki, which already defines some subclasses.
  */
@@ -47,7 +47,7 @@ abstract class TypeDef {
 	 * Whether the value may be an array.
 	 * Note that this is different from multi-value.
 	 * This should only return true if each value can be an array.
-	 * @since 1.41
+	 * @since MediaWiki 1.41
 	 * @stable to override
 	 * @return bool
 	 */
@@ -98,7 +98,7 @@ abstract class TypeDef {
 	 */
 	protected function fatal(
 		$failure, $name, $value, array $settings, array $options
-	) {
+	): never {
 		$this->failure( $failure, $name, $value, $settings, $options );
 	}
 

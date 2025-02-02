@@ -1,6 +1,6 @@
 <?php
 
-namespace Wikimedia\Tests\ParamValidator\TypeDef;
+namespace Wikimedia\ParamValidator\Tests\Unit\TypeDef;
 
 use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\ParamValidator\SimpleCallbacks;
@@ -177,8 +177,11 @@ class LimitDefTest extends TypeDefTestCase {
 				[],
 				[ 'min' => 0, 'max' => null ],
 				[
-					LimitDef::PARAM_MIN => '<message key="paramvalidator-help-type-number-min"><text>1</text><num>0</num><text>∞</text></message>',
-					ParamValidator::PARAM_TYPE => '<message key="paramvalidator-help-type-limit"><text>1</text></message>',
+					LimitDef::PARAM_MIN =>
+						// phpcs:ignore Generic.Files.LineLength.TooLong
+						'<message key="paramvalidator-help-type-number-min"><text>1</text><num>0</num><text>∞</text></message>',
+					ParamValidator::PARAM_TYPE =>
+						'<message key="paramvalidator-help-type-limit"><text>1</text></message>',
 				],
 			],
 		];

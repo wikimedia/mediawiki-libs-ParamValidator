@@ -1,6 +1,6 @@
 <?php
 
-namespace Wikimedia\Tests\ParamValidator\TypeDef;
+namespace Wikimedia\ParamValidator\Tests\Unit\TypeDef;
 
 use InvalidArgumentException;
 use UnexpectedValueException;
@@ -30,6 +30,7 @@ class UploadDefTest extends TypeDefTestCase {
 			->onlyMethods( [ 'getIniSize' ] )
 			->getMock();
 		$ret->method( 'getIniSize' )->willReturn( $options['inisize'] ?? 2 * 1024 * 1024 );
+		// @phan-suppress-next-line PhanTypeMismatchReturn
 		return $ret;
 	}
 

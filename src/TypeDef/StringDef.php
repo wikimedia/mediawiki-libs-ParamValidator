@@ -18,7 +18,7 @@ use Wikimedia\ParamValidator\TypeDef;
  * Additional codes may be generated when using certain PARAM constants. See
  * the constants' documentation for details.
  *
- * @since 1.34
+ * @since MediaWiki 1.34
  * @unstable
  */
 class StringDef extends TypeDef {

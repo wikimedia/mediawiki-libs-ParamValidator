@@ -10,7 +10,7 @@ use Wikimedia\Message\DataMessageValue;
  * Error reporting for ParamValidator
  *
  * @newable
- * @since 1.34
+ * @since MediaWiki 1.34
  * @unstable
  */
 class ValidationException extends UnexpectedValueException {

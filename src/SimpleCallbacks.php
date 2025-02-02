@@ -11,7 +11,7 @@ use Wikimedia\ParamValidator\Util\UploadedFile;
  * Options array keys used by this class:
  *  - 'useHighLimits': (bool) Return value from useHighLimits()
  *
- * @since 1.34
+ * @since MediaWiki 1.34
  * @unstable
  */
 class SimpleCallbacks implements Callbacks {

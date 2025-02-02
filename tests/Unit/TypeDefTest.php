@@ -1,8 +1,7 @@
 <?php
 
-namespace Wikimedia\Tests\ParamValidator;
+namespace Wikimedia\ParamValidator\Tests\Unit;
 
-use MediaWikiCoversValidator;
 use PHPUnit\Framework\TestCase;
 use Wikimedia\Message\DataMessageValue;
 use Wikimedia\ParamValidator\Callbacks;
@@ -16,7 +15,6 @@ use Wikimedia\TestingAccessWrapper;
  * @covers \Wikimedia\ParamValidator\TypeDef
  */
 class TypeDefTest extends TestCase {
-	use MediaWikiCoversValidator;
 
 	public function testMisc() {
 		$typeDef = $this->getMockBuilder( TypeDef::class )
@@ -144,10 +142,12 @@ class TypeDefTest extends TestCase {
 	public static function provideFailure() {
 		return [
 			'Basic' => [
+				// phpcs:ignore Generic.Files.LineLength.TooLong
 				'<datamessage key="paramvalidator-foobar" code="foobar"><params><plaintext>test</plaintext><plaintext>1234</plaintext></params></datamessage>',
 				'foobar', 'test', 1234, [], []
 			],
 			'DataMessageValue' => [
+				// phpcs:ignore Generic.Files.LineLength.TooLong
 				'<datamessage key="XXX-msg" code="foobar"><params><plaintext>test</plaintext><plaintext>XXX</plaintext><text>a</text><text>b</text><plaintext>pt</plaintext></params><data>{"data":"!!!"}</data></datamessage>',
 				DataMessageValue::new( 'XXX-msg', [ 'a', 'b' ], 'foobar', [ 'data' => '!!!' ] )
 					->plaintextParams( 'pt' ),

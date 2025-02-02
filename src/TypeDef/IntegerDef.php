@@ -17,7 +17,7 @@ use Wikimedia\ParamValidator\ParamValidator;
  *  - 'badinteger': The value was invalid or could not be represented as a PHP
  *    integer. No data.
  *
- * @since 1.34
+ * @since MediaWiki 1.34
  * @unstable
  */
 class IntegerDef extends NumericDef {

@@ -17,7 +17,7 @@ use Wikimedia\ParamValidator\TypeDef;
  * Failure codes:
  *  - 'badbool': The value is not a recognized boolean. No data.
  *
- * @since 1.34
+ * @since MediaWiki 1.34
  * @unstable
  */
 class BooleanDef extends TypeDef {

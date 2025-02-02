@@ -23,7 +23,7 @@ use Wikimedia\ParamValidator\ParamValidator;
  *  - 'badfloat-notfinite': The value was in a valid format, but conversion resulted in
  *    infinity or NAN.
  *
- * @since 1.34
+ * @since MediaWiki 1.34
  * @unstable
  */
 class FloatDef extends NumericDef {

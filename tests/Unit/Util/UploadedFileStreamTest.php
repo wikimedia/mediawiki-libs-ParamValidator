@@ -1,8 +1,6 @@
 <?php
 
-namespace Wikimedia\Tests\ParamValidator\Util;
-
-require_once __DIR__ . '/UploadedFileTestBase.php';
+namespace Wikimedia\ParamValidator\Tests\Unit\Util;
 
 use Error;
 use PHPUnit\Framework\AssertionFailedError;
@@ -27,10 +25,6 @@ class UploadedFileStreamTest extends UploadedFileTestBase {
 	}
 
 	public function testConstruct_notReadable() {
-		if ( wfIsWindows() ) {
-			$this->markTestSkipped( "Skip test, since chmod does not work on windows" );
-		}
-
 		$filename = $this->makeTemp( __FUNCTION__ );
 
 		chmod( $filename, 0000 );

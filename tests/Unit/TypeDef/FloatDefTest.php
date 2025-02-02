@@ -1,6 +1,6 @@
 <?php
 
-namespace Wikimedia\Tests\ParamValidator\TypeDef;
+namespace Wikimedia\ParamValidator\Tests\Unit\TypeDef;
 
 use Wikimedia\Message\DataMessageValue;
 use Wikimedia\ParamValidator\ParamValidator;
@@ -178,6 +178,7 @@ class FloatDefTest extends TypeDefTestCase {
 				[],
 				[ 'min' => null, 'max' => null ],
 				[
+					// phpcs:ignore Generic.Files.LineLength.TooLong
 					ParamValidator::PARAM_TYPE => '<message key="paramvalidator-help-type-float"><text>1</text></message>',
 				],
 			],
@@ -189,7 +190,9 @@ class FloatDefTest extends TypeDefTestCase {
 				],
 				[ 'min' => 1, 'max' => 100 ],
 				[
+					// phpcs:ignore Generic.Files.LineLength.TooLong
 					FloatDef::PARAM_MIN => '<message key="paramvalidator-help-type-number-minmax"><text>2</text><num>1</num><num>100</num></message>',
+					// phpcs:ignore Generic.Files.LineLength.TooLong
 					ParamValidator::PARAM_TYPE => '<message key="paramvalidator-help-type-float"><text>2</text></message>',
 				],
 			],

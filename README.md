@@ -50,6 +50,5 @@ relevant `PARAM_*` constants and TypeDef classes.
 
 Running tests
 -------------
-
     composer install --prefer-dist
     composer test

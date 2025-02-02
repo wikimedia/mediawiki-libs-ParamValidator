@@ -1,6 +1,6 @@
 <?php
 
-namespace Wikimedia\Tests\ParamValidator\TypeDef;
+namespace Wikimedia\ParamValidator\Tests\Unit\TypeDef;
 
 use InvalidArgumentException;
 use Wikimedia\Message\DataMessageValue;
@@ -110,6 +110,10 @@ class ExpiryDefTest extends TypeDefTestCase {
 					ExpiryDef::PARAM_MAX => '6 months',
 				]
 			),
+			'Expiry exceeds Y10K' => $this->getValidationAssertion(
+				'50000 years',
+				'badexpiry'
+			),
 			'Not a string' => [
 				[ 1, 2, 3 ],
 				new ValidationException(
@@ -145,6 +149,7 @@ class ExpiryDefTest extends TypeDefTestCase {
 				[],
 				[],
 				[
+					// phpcs:ignore Generic.Files.LineLength.TooLong
 					'param-type' => '<message key="paramvalidator-help-type-expiry"><text>1</text><list listType="text"><text>&quot;infinite&quot;</text><text>&quot;indefinite&quot;</text><text>&quot;infinity&quot;</text><text>&quot;never&quot;</text></list></message>'
 				]
 			]

@@ -15,7 +15,7 @@ use Wikimedia\ParamValidator\TypeDef;
  *
  * The result from validate() is a PHP boolean.
  *
- * @since 1.34
+ * @since MediaWiki 1.34
  * @unstable
  */
 class PresenceBooleanDef extends TypeDef {

@@ -26,7 +26,7 @@ use Wikimedia\Timestamp\TimestampException;
  *  - 'unclearnowtimestamp': Non-fatal. The value is the empty string or "0".
  *    Use 'now' instead if you really want the current timestamp. No data.
  *
- * @since 1.34
+ * @since MediaWiki 1.34
  * @unstable
  */
 class TimestampDef extends TypeDef {

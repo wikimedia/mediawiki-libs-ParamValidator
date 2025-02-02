@@ -14,7 +14,7 @@ use Wikimedia\AtEase\AtEase;
  * be used directly by other code, other than perhaps when implementing
  * Callbacks::getUploadedFile() when another PSR-7 library is not already in use.
  *
- * @since 1.34
+ * @since MediaWiki 1.34
  * @unstable
  */
 class UploadedFile implements UploadedFileInterface {

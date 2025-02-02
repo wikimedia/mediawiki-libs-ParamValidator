@@ -1,6 +1,6 @@
 <?php
 
-namespace Wikimedia\Tests\ParamValidator\TypeDef;
+namespace Wikimedia\ParamValidator\Tests\Unit\TypeDef;
 
 use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\ParamValidator\SimpleCallbacks;
@@ -136,7 +136,8 @@ class PresenceBooleanDefTest extends TypeDefTestCase {
 				[],
 				[ 'default' => null ],
 				[
-					ParamValidator::PARAM_TYPE => '<message key="paramvalidator-help-type-presenceboolean"><text>1</text></message>',
+					ParamValidator::PARAM_TYPE =>
+						'<message key="paramvalidator-help-type-presenceboolean"><text>1</text></message>',
 					ParamValidator::PARAM_DEFAULT => null,
 				],
 			],

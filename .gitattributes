@@ -1,0 +1,6 @@
+.* export-ignore
+composer.json export-ignore
+Doxyfile export-ignore
+phpunit.bootstrap.php export-ignore
+phpunit.xml.dist export-ignore
+tests/ export-ignore

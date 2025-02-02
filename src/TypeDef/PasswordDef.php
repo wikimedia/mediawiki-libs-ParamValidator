@@ -10,7 +10,7 @@ use Wikimedia\ParamValidator\ParamValidator;
  * This is a string type that forces PARAM_SENSITIVE = true.
  *
  * @see StringDef
- * @since 1.34
+ * @since MediaWiki 1.34
  * @unstable
  */
 class PasswordDef extends StringDef {
