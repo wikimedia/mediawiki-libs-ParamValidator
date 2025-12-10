@@ -109,8 +109,6 @@ class ParamValidatorTest extends TestCase {
 		$this->assertSame( $def2, $validator->getTypeDef( 'bar' ) );
 	}
 
-	/**
-	 */
 	public function testGetTypeDef_error() {
 		$validator = new ParamValidator(
 			new SimpleCallbacks( [] ),
