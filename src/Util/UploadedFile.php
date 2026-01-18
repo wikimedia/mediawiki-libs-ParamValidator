@@ -4,7 +4,6 @@ namespace Wikimedia\ParamValidator\Util;
 
 use Psr\Http\Message\UploadedFileInterface;
 use RuntimeException;
-use Wikimedia\AtEase\AtEase;
 
 /**
  * A simple implementation of UploadedFileInterface
@@ -101,12 +100,9 @@ class UploadedFile implements UploadedFileInterface {
 		}
 
 		error_clear_last();
-		$ret = AtEase::quietCall(
-			$this->fromUpload ? 'move_uploaded_file' : 'rename',
-			$this->data['tmp_name'],
-			$targetPath
-		);
-		if ( $ret === false ) {
+		$func = $this->fromUpload ? 'move_uploaded_file' : 'rename';
+		$ret = @$func( $this->data['tmp_name'], $targetPath );
+		if ( !$ret ) {
 			$err = error_get_last();
 			throw new RuntimeException( "Move failed: " . ( $err['message'] ?? 'Unknown error' ) );
 		}

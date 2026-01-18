@@ -6,7 +6,6 @@ use Psr\Http\Message\StreamInterface;
 use RuntimeException;
 use Stringable;
 use Throwable;
-use Wikimedia\AtEase\AtEase;
 
 /**
  * Implementation of StreamInterface for a file in $_FILES
@@ -37,7 +36,7 @@ class UploadedFileStream implements Stringable, StreamInterface {
 	 */
 	private static function quietCall( callable $func, array $args, $fail, $msg ) {
 		error_clear_last();
-		$ret = AtEase::quietCall( $func, ...$args );
+		$ret = @$func( ...$args );
 		if ( $ret === $fail ) {
 			$err = error_get_last();
 			throw new RuntimeException( "$msg: " . ( $err['message'] ?? 'Unknown error' ) );
@@ -81,7 +80,7 @@ class UploadedFileStream implements Stringable, StreamInterface {
 			// Spec doesn't care about close errors.
 			try {
 				// PHP 7 emits warnings, suppress
-				AtEase::quietCall( 'fclose', $this->fp );
+				@fclose( $this->fp );
 			} catch ( \TypeError ) {
 				// While PHP 8 throws exceptions, ignore
 			}
@@ -102,7 +101,7 @@ class UploadedFileStream implements Stringable, StreamInterface {
 			if ( $this->fp ) {
 				// Spec doesn't care about errors here.
 				try {
-					$stat = AtEase::quietCall( 'fstat', $this->fp );
+					$stat = @fstat( $this->fp );
 				} catch ( \TypeError ) {
 				}
 				$this->size = $stat['size'] ?? null;
@@ -120,7 +119,7 @@ class UploadedFileStream implements Stringable, StreamInterface {
 	public function eof() {
 		// Spec doesn't care about errors here.
 		try {
-			return !$this->fp || AtEase::quietCall( 'feof', $this->fp );
+			return !$this->fp || @feof( $this->fp );
 		} catch ( \TypeError ) {
 			return true;
 		}

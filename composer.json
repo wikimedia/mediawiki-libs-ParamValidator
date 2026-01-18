@@ -115,7 +115,6 @@
 		"wikimedia/json-codec": "^3.0",
 		"wikimedia/testing-access-wrapper": "^3.0 || ^4.0",
 		"wikimedia/timestamp": "^4.2",
-		"wikimedia/at-ease": "^3.0",
 		"psr/http-message": "1.1",
 		"wikimedia/assert": "^0.5.1",
 		"wikimedia/object-factory": "^5.0",
