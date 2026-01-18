@@ -56,7 +56,7 @@ class TimestampDefTest extends TypeDefTestCase {
 		parent::testValidate( $value, $expect, $settings, $options, $expectConds );
 	}
 
-	public function provideValidate() {
+	public static function provideValidate() {
 		$specific = new ConvertibleTimestamp( 1517630706 );
 		$specificMs = new ConvertibleTimestamp( 1517630706.999 );
 		$now = new ConvertibleTimestamp( 1559764242 );
@@ -112,7 +112,7 @@ class TimestampDefTest extends TypeDefTestCase {
 		];
 	}
 
-	public function provideCheckSettings() {
+	public static function provideCheckSettings() {
 		$keys = [ 'Y', TimestampDef::PARAM_TIMESTAMP_FORMAT ];
 
 		return [
@@ -179,7 +179,7 @@ class TimestampDefTest extends TypeDefTestCase {
 		];
 	}
 
-	public function provideStringifyValue() {
+	public static function provideStringifyValue() {
 		$specific = new ConvertibleTimestamp( '20180203040506' );
 
 		return [
@@ -190,7 +190,7 @@ class TimestampDefTest extends TypeDefTestCase {
 		];
 	}
 
-	public function provideGetInfo() {
+	public static function provideGetInfo() {
 		return [
 			'Basic test' => [
 				[],

@@ -18,7 +18,7 @@ class EnumDefTest extends TypeDefTestCase {
 		return new EnumDef( $callbacks );
 	}
 
-	public function provideValidate() {
+	public static function provideValidate() {
 		$settings = [
 			ParamValidator::PARAM_TYPE => [ 'a', 'b', 'c', 'd', 'e' ],
 			EnumDef::PARAM_DEPRECATED_VALUES => [
@@ -74,7 +74,7 @@ class EnumDefTest extends TypeDefTestCase {
 		];
 	}
 
-	public function provideCheckSettings() {
+	public static function provideCheckSettings() {
 		return [
 			'Basic test' => [
 				[
@@ -111,7 +111,7 @@ class EnumDefTest extends TypeDefTestCase {
 						'd' => true,
 						'e' => MessageValue::new( 'e' ),
 						'f' => 'f',
-						'g' => $this,
+						'g' => new \stdClass,
 						0 => true,
 						1 => true,
 						'x' => null,
@@ -126,7 +126,7 @@ class EnumDefTest extends TypeDefTestCase {
 						// phpcs:ignore Generic.Files.LineLength.TooLong
 						'Values in PARAM_DEPRECATED_VALUES must be null, true, or MessageValue, but value for "f" is string',
 						// phpcs:ignore Generic.Files.LineLength.TooLong
-						'Values in PARAM_DEPRECATED_VALUES must be null, true, or MessageValue, but value for "g" is ' . static::class,
+						'Values in PARAM_DEPRECATED_VALUES must be null, true, or MessageValue, but value for "g" is ' . \stdClass::class,
 						// phpcs:enable
 						'PARAM_DEPRECATED_VALUES contains "x", which is not one of the enumerated values',
 					],
@@ -139,7 +139,7 @@ class EnumDefTest extends TypeDefTestCase {
 		];
 	}
 
-	public function provideGetEnumValues() {
+	public static function provideGetEnumValues() {
 		return [
 			'Basic test' => [
 				[ ParamValidator::PARAM_TYPE => [ 'a', 'b', 'c', 'd' ] ],
@@ -148,7 +148,7 @@ class EnumDefTest extends TypeDefTestCase {
 		];
 	}
 
-	public function provideStringifyValue() {
+	public static function provideStringifyValue() {
 		return [
 			'Basic test' => [ 123, '123' ],
 			'Array' => [ [ 1, 2, 3 ], '1|2|3' ],
@@ -156,7 +156,7 @@ class EnumDefTest extends TypeDefTestCase {
 		];
 	}
 
-	public function provideGetInfo() {
+	public static function provideGetInfo() {
 		return [
 			'Non-multi' => [
 				[
