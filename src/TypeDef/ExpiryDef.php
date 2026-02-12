@@ -35,6 +35,7 @@ class ExpiryDef extends TypeDef {
 	public function validate( $name, $value, array $settings, array $options ) {
 		$this->failIfNotString( $name, $value, $settings, $options );
 
+		$expiry = null;
 		try {
 			$expiry = self::normalizeExpiry( $value, TS_ISO_8601 );
 		} catch ( InvalidArgumentException ) {
