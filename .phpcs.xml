@@ -9,6 +9,7 @@
         <exclude name="MediaWiki.Commenting.PropertyDocumentation.MissingDocumentationProtected"/>
         <exclude name="MediaWiki.Commenting.PropertyDocumentation.MissingDocumentationPublic"/>
     </rule>
+	<rule ref="Generic.PHP.RequireStrictTypes" />
     <file>./src</file>
     <file>./tests</file>
     <arg name="bootstrap" value="./vendor/mediawiki/mediawiki-codesniffer/utils/bootstrap-ci.php"/>
