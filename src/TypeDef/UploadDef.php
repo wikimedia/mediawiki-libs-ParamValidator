@@ -99,7 +99,7 @@ class UploadDef extends TypeDef {
 				'k' => 1024 ** 1,
 			];
 			$size = $this->getIniSize();
-			$last = strtolower( substr( $size, -1 ) );
+			$last = strtolower( substr( (string)$size, -1 ) );
 			$size = intval( $size, 10 ) * ( $prefixes[$last] ?? 1 );
 			$this->failure(
 				$this->failureMessage( 'badupload', [

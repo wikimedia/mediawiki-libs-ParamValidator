@@ -36,7 +36,7 @@ class BooleanDef extends TypeDef {
 			);
 		}
 
-		$value = strtolower( $value );
+		$value = strtolower( (string)$value );
 		if ( in_array( $value, self::TRUEVALS, true ) ) {
 			return true;
 		}
