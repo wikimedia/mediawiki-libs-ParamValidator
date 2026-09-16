@@ -116,7 +116,7 @@
 		"wikimedia/timestamp": "^4.2",
 		"psr/http-message": "1.1",
 		"wikimedia/assert": "^0.5.1",
-		"wikimedia/object-factory": "^5.0",
+		"wikimedia/object-factory": "^7.0",
 		"wikimedia/message": "^1.0.6"
 	},
 	"require-dev": {
